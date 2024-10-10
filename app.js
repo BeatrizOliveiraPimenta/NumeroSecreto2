@@ -14,6 +14,7 @@ exibirTexto('p', 'Escolha um número de 1 a 10:');
 }
 mensagemTentativas();
 
+
 function verificarChute (){
 let chute = document.querySelector('input').value;
 
@@ -40,19 +41,16 @@ function gerarNumero(){
 let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
 let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
 
+if (quantidadeDeElementosNaLista == numeroLimite) {
+    listaDeNumerosSorteados = [];
+} 
     if (listaDeNumerosSorteados.includes(numeroEscolhido)){
-    return gerarNumeroAleatorio();}
-        if (quantidadeDeElementosNaLista == numeroLimite) {
-                    listaDeNumerosSorteados = [];
-                
-                }  else {
+    return gerarNumeroAleatorio();
+} else {
                 listaDeNumerosSorteados.push(numeroEscolhido);
                 console.log(listaDeNumerosSorteados);
                 return numeroEscolhido;
-}
-
-
-}
+}}
 
 function limparCampo(){
     chute = document.querySelector('input');
